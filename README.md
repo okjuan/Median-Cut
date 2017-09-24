@@ -1,7 +1,7 @@
-#CSC 205 Final Project
-#####Juan Carlos Gallegos -- V00816131 -- April 15th, 2016
+# CSC 205 Final Project
+##### Juan Carlos Gallegos -- V00816131 -- April 15th, 2016
 
-##Overview
+## Overview
 The *Median Cut* colour quantization approach 'judiciously' constructs a palette of 256 colours from the larger palette of a supplied image. Since this allows each pixel to be represented by a maximum of 8 bits, the minimum storage needed by the image decreases notably.  
 The **ColorQuantization** program accepts a PNG image as input, performs *Median Cut* quantization on it, and outputs a TXT file containing*:   
 
@@ -14,23 +14,23 @@ The pixels are represented by integers in the range of **[0, SizeOfPalette)** th
 Separately, the program supports decompression: it accepts a TXT file with the above format, decodes it, and produces a corresponding PNG image.  
 Additionally, the decompressor blurs areas where color banding is detected.
 
-##Running the Program
+## Running the Program
 
-###Compression
+### Compression
 
 `java ColorQuantization image.png`  
   
 **output**: `compr.txt` containing all compressed image data
 
-###Decompression
+### Decompression
 
 `java ColorQuantization [-b] compr.txt`
 
 **output**: `decompr.png`, the image with a new colour palette; `-b` flag enables blurring to treat colour banding.
 
 
-##Implementation
-###Compression
+## Implementation
+### Compression
 
 **Set-up**: PNG image is read & converted into a (1D) **Color** array.  
 
@@ -56,7 +56,7 @@ Additionally, the decompressor blurs areas where color banding is detected.
 
 * for each pixel in the image, finds closest colour in palette in terms of RGB space
 
-###Decompression
+### Decompression
 
 **readCompressedFile()**  
 
